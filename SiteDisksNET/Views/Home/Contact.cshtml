@@ -1,0 +1,62 @@
+﻿@model SiteDisksNET.Models.Contact
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+@Html.Partial("~/Views/Shared/_GreenbannerPartial.cshtml");
+
+<div class="container theme-showcase">
+    <div class="jumbotron">
+        <h2>We willing to hear from you!</h2>
+        <p>Please feel free to contact us regarding any website design, graphic design or SEO services. At Design Point we reply promptly to all messages received so that we can assist in achieving your business needs sooner rather than later.</p>
+        <p>Alternatively, complete the contact form below to send us an enquiry.</p>
+    </div>
+
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-9">
+                <div id="messageForm">
+                    @Html.Partial("~/Views/Home/_ContactForm.cshtml");
+                </div>
+
+                <br />
+                <div id="loading" style="display: none">
+                    <div class="alert alert-success">Sending Message...</div>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="contactus">
+                    <label class="control-label">
+                        <h4>
+                            <img src="~/images/icons/sitedisks-address.png" />
+                            Address</h4>
+                        <h5>Unit 4<br />
+                            127 Balwyn Road<br />
+                            Balwyn VIC 3103<br />
+                            AUSTRALIA</h5>
+                        <h4>
+                            <img src="~/images/icons/sitedisks-phone.png" />
+                            Phone</h4>
+                        <h5>+61 3 9836 6319</h5>
+                        <h4>
+                            <img src="~/images/icons/sitedisks-mobile.png" />
+                            Mobile</h4>
+                        <h5>+61 481 540 715</h5>
+                        <h4>
+                            <img src="~/images/icons/sitedisks-email.png" />
+                            Email</h4>
+                        <h5><a href="mailto:info@sitedisks.com.au">info@sitedisks.com.au</a></h5>
+                        <h4>
+                            <img src="../images/icons/sitedisks-global.png" />
+                            Website</h4>
+                        <h5>www.sitedisks.com.au</h5>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

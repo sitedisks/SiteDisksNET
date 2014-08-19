@@ -1,0 +1,108 @@
+﻿body {
+	color: #8fbb4f;	
+}
+
+.container > .navbar-header > .navbar-brand {
+	margin-top: -5px;	
+}
+
+/* CSS Document */
+.bs-docs-header{
+	position:relative;
+	padding:100px 15px 30px 15px;
+	color:#D9EAB0;
+	text-align:center;
+	text-shadow:0 1px 0 rgba(0,0,0,.1);
+	background-color:#a6d16a;
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#8fbb4f),to(#a6d16a));
+	background-image:-webkit-linear-gradient(top,#8fbb4f 0,#a6d16a 100%);
+	background-image:-o-linear-gradient(top,#8fbb4f 0,#a6d16a 100%);
+	background-image:linear-gradient(to bottom,#8fbb4f 0,#a6d16a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fbb4f', endColorstr='#a6d16a', GradientType=0);
+	background-repeat:repeat-x
+}
+
+.bs-docs-header{
+	margin-bottom:40px;
+	font-size:20px
+}
+
+.bs-docs-header h1{
+	margin-top:0;
+	color:#fff
+}
+
+.bs-docs-header p{
+	margin-bottom:0;
+	font-weight:300;
+	line-height:1.4
+}
+
+.bs-docs-header .container{position:relative}
+
+@media (min-width:768px){
+	.bs-docs-header{
+		padding-top:100px;
+		padding-bottom:60px;
+		font-size:24px;
+		text-align:left
+	}
+	.bs-docs-header h1{
+		font-size:60px;
+		line-height:1
+	}
+    .form-horizontal .control-label {
+        margin-bottom: 5px;
+  }
+}
+
+@media (min-width:992px){
+	.bs-docs-header h1,.bs-docs-header p{
+		margin-right:380px
+	}
+}
+
+/* adjust the carousel slide position */
+.carousel {
+	margin-top:50px;
+	margin-bottom:60px;	
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* Form validation */
+
+label.error {
+  color: #a94442;
+}
+
+/* email subscribe modal popup hack */
+@media screen and (min-width: 768px) {
+    .custom-class {
+        width: 430px /* either % (e.g. 60%) or px (400px) */
+    }
+}
+
+/* Contact icons */
+.contactus h4 {
+	color: #679e27;	
+}
+
+.contactus h5 {
+	margin-left: 35px;	
+}
+
