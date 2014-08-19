@@ -282,6 +282,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>lowataEF.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\portfolio\sitedisks-MarcoMelbourne.png" />
     <Content Include="Models\lowataEF.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>lowataEF.edmx</DependentUpon>
