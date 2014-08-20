@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -203,6 +204,7 @@
     <Compile Include="Models\Contact.cs">
       <DependentUpon>lowataEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\IRepository.cs" />
     <Compile Include="Models\lowataEF.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -218,6 +220,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lowataEF.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

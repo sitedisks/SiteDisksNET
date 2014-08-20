@@ -16,27 +16,32 @@ namespace SiteDisksNET.Controllers
     [EnableCors(origins:"http://www.sitedisks.com.au", headers: "*", methods:"*")]
     public class ContactsController : ApiController
     {
-        private lowataEntities db = new lowataEntities();
-
-        // GET api/Contacts
-        public IEnumerable<Contact> GetContacts()
+        private IRepository<Contact> ContactRep;
+        public ContactsController()
         {
-            return db.Contacts.AsEnumerable();
+            var dbcontext = new lowataEntities();
+            ContactRep = new Repository<Contact>(dbcontext);
+            
         }
 
-        // GET api/Contacts/5
+        // GET api/Contacts - GetAll()
+        public IEnumerable<Contact> GetContacts()
+        {
+            return ContactRep.GetAll();
+        }
+
+        // GET api/Contacts/5 - Get()
         public Contact GetContact(int id)
         {
-            Contact contact = db.Contacts.Find(id);
+            Contact contact = ContactRep.Get(x => x.Id == id);
             if (contact == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
-
             return contact;
         }
 
-        // PUT api/Contacts/5
+        // PUT api/Contacts/5 -- Update()
         public HttpResponseMessage PutContact(int id, Contact contact)
         {
             if (!ModelState.IsValid)
@@ -49,11 +54,9 @@ namespace SiteDisksNET.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
 
-            db.Entry(contact).State = EntityState.Modified;
-
             try
             {
-                db.SaveChanges();
+                ContactRep.Update(contact);
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -63,13 +66,12 @@ namespace SiteDisksNET.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        // POST api/Contacts
+        // POST api/Contacts - Add()
         public HttpResponseMessage PostContact(Contact contact)
         {
             if (ModelState.IsValid)
             {
-                db.Contacts.Add(contact);
-                db.SaveChanges();
+                ContactRep.Add(contact);
 
                 HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, contact);
                 response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = contact.Id }));
@@ -81,20 +83,19 @@ namespace SiteDisksNET.Controllers
             }
         }
 
-        // DELETE api/Contacts/5
+        // DELETE api/Contacts/5 - Delete()
         public HttpResponseMessage DeleteContact(int id)
         {
-            Contact contact = db.Contacts.Find(id);
+            Contact contact = ContactRep.Get(c => c.Id == id);
             if (contact == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
 
-            db.Contacts.Remove(contact);
 
             try
             {
-                db.SaveChanges();
+                ContactRep.Delete(contact);
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -106,7 +107,7 @@ namespace SiteDisksNET.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            ContactRep.Dispose();
             base.Dispose(disposing);
         }
     }
