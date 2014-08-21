@@ -49,10 +49,11 @@ namespace SiteDisksNET.Models
         {
             if (entity == null)
             {
-
+                throw new ArgumentNullException("entity");
             }
             else
             {
+                _context.Set<T>().Attach(entity);
                 _context.Entry(entity).State = EntityState.Modified;
                 this.SaveChanges();
             }
@@ -66,7 +67,11 @@ namespace SiteDisksNET.Models
             }
             else
             {
-                _context.Entry(entity).State = EntityState.Deleted;
+                if (_context.Entry(entity).State == EntityState.Detached)
+                {
+                    _context.Set<T>().Attach(entity);
+                }
+                _context.Set<T>().Remove(entity);
                 this.SaveChanges();
             }
         }
@@ -99,3 +104,6 @@ namespace SiteDisksNET.Models
 
 
 }
+// Add, Attach, Detach, and remove
+// www.remondo.net/entity-framework-add-remove-attach-detach/
+// msdn.microsoft.com/en-us/data/jj592676.aspx

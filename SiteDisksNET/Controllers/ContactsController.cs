@@ -23,7 +23,8 @@ namespace SiteDisksNET.Controllers
             ContactRep = new Repository<Contact>(dbcontext);
             
         }
-
+        // Use the dependency injection, DI software woulde ensure that the correct
+        // repository object always be provided.
         public ContactsController(IRepository<Contact> contactRep)
         {
             this.ContactRep = contactRep;
