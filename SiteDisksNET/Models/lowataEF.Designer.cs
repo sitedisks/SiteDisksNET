@@ -1,4 +1,4 @@
-﻿// Default code generation is disabled for model 'C:\Dev\SiteDisksNET\SiteDisksNET\Models\lowataEF.edmx'. 
+﻿// Default code generation is disabled for model 'D:\Personal\Documents\GitHub\SiteDisksNET\SiteDisksNET\Models\lowataEF.edmx'. 
 // To enable default code generation, change the value of the 'Code Generation Strategy' designer
 // property to an alternate value. This property is available in the Properties Window when the model is
 // open in the designer.

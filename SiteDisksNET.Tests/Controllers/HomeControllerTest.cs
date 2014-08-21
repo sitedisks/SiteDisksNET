@@ -9,6 +9,9 @@ using SiteDisksNET.Controllers;
 
 namespace SiteDisksNET.Tests.Controllers
 {
+    // NUnit & Moq
+    // http://stackoverflow.com/questions/6646244/mvc-3-how-to-learn-how-to-test-with-nunit-ninject-and-moq
+    // A testable application is an application that is loosely coupled enough to allow its independent parts to be tested in isolation. 
     [TestClass]
     public class HomeControllerTest
     {

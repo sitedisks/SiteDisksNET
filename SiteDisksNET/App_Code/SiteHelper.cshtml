@@ -1,0 +1,43 @@
+﻿@using SiteDisksNET.Models;
+
+@helper PortfolioCase(IList<Portfolio> lists)
+{
+    int i = 1;
+    foreach (Portfolio item in lists)
+    {
+    <div class="row">
+        @if (i % 2 == 1)
+        {
+            @PortfolioDescription(item)
+            @PortfolioImage(item)
+                
+        }
+        else
+        {
+            @PortfolioImage(item)
+            @PortfolioDescription(item)
+        }
+    </div>
+    <hr class="featurette-divider">
+        i++;
+    }    
+
+}
+
+@helper PortfolioDescription(Portfolio item)
+{
+    <div class="col-md-7">
+        <h2 class="featurette-heading">@item.Title<span class="text-muted"> @item.Title2</span></h2>
+        <p class="lead">@item.Description</p>
+        <!-- <p><a class="btn btn-default" id="btnFast" href="http://www.nightsecret.com.au" target="_blank" role="button">Go to the site</a></p>-->
+    </div>
+}
+
+@helper PortfolioImage(Portfolio item)
+{
+    <div class="col-md-5 siteimage">
+        <a target="_blank" href="http://@item.URL">
+            <img class="featurette-image img-responsive" src="~/images/portfolio/@item.ImageURL" alt="@item.Title @item.Title2" border="0">
+        </a>
+    </div>
+}

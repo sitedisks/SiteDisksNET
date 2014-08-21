@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="1f15caf4bdcf4c0ba5f308e50c8ff289" Name="Diagram1">
         <EntityTypeShape EntityType="lowataModel.Contact" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="lowataModel.Portfolio" Width="1.5" PointX="9.82014938714921" PointY="26.516187382171019" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

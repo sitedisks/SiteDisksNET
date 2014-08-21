@@ -11,7 +11,14 @@ namespace SiteDisksNET.Controllers
 {
     public class HomeController : Controller
     {
-        private lowataEntities _DB = new lowataEntities();
+        private IRepository<Portfolio> PortfolioRep;
+        private IRepository<Contact> ContactRep;
+        public HomeController()
+        {
+            var dbcontext = new lowataEntities();
+            PortfolioRep = new Repository<Portfolio>(dbcontext);
+            ContactRep = new Repository<Contact>(dbcontext);
+        }
 
         public ActionResult Index()
         {
@@ -30,7 +37,8 @@ namespace SiteDisksNET.Controllers
         public ActionResult Portfolio()
         {
             ViewBag.Message = "We creating real relationships, asking real questions, and participate in more than just projects.";
-            return View();
+            IList<Portfolio> Portfolios = PortfolioRep.GetAll().OrderByDescending(c=>c.UpdatedDate).ToList();
+            return View(Portfolios);
         }
 
         public ActionResult Contact()
@@ -47,8 +55,11 @@ namespace SiteDisksNET.Controllers
             if (ModelState.IsValid)
             {
                 //Store DB
-                _DB.Contacts.Add(model);
-                _DB.SaveChanges();
+                ContactRep.Add(model);
+                //_DB.Contacts.Add(model);
+                //_DB.SaveChanges();
+
+                
 
                 //Send email
                 MailMessage mailMsg = new MailMessage();

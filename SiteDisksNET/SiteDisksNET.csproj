@@ -220,6 +220,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lowataEF.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Portfolio.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -310,6 +313,7 @@
       <DependentUpon>lowataEF.edmx</DependentUpon>
       <LastGenOutput>lowataEF.cs</LastGenOutput>
     </Content>
+    <Content Include="App_Code\SiteHelper.cshtml" />
     <None Include="Properties\PublishProfiles\SiteDisksNET.pubxml" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Images\banner\sitedisks-amaze-1920.jpg" />
