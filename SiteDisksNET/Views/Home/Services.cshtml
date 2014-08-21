@@ -1,5 +1,9 @@
-﻿@{
-    ViewBag.Title = "Services";
+﻿@using SiteDisksNET.Models
+@model PageInfo
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    ViewBag.Message = Model.Message;
 }
 
 @Html.Partial("~/Views/Shared/_GreenbannerPartial.cshtml");
@@ -87,6 +91,53 @@
         </div>
         <div class="col-md-5">
             <img class="featurette-image img-responsive" src="~/images/sitedisks-winter.jpg" alt="SiteDisks prototype">
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(function () {
+            $('#btnStart').click(function () {
+                $('#popupStart').modal('show');
+                return false;
+            });
+        });
+    </script>
+}
+
+<div class="modal fade" id="popupStart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog custom-class">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="http://sitedisks.us3.list-manage.com/subscribe/post?u=15709e58e49ef547d37e84bf3&amp;id=3736fa37d5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-horizontal text-center" target="_blank" novalidate>
+
+
+                        <div class="mc-field-group">
+
+                            <label class="alert alert-success" for="mce-EMAIL">Enter email address to get your free business quota</label>
+                            <input type="email" placeholder="Enter email" name="EMAIL" class="form-control required email" id="mce-EMAIL">
+                        </div>
+
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display: none"></div>
+                            <div class="response" id="mce-success-response" style="display: none"></div>
+                        </div>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_15709e58e49ef547d37e84bf3_3736fa37d5" tabindex="-1" value="">
+                        </div>
+                        <div class="clear"></div>
+                        <br />
+                        <input type="submit" value="Go!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-lg btn-success">
+                    </form>
+                </div>
+                <!--End mc_embed_signup-->
+
+            </div>
         </div>
     </div>
 </div>

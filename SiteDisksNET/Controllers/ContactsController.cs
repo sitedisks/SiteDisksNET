@@ -24,6 +24,11 @@ namespace SiteDisksNET.Controllers
             
         }
 
+        public ContactsController(IRepository<Contact> contactRep)
+        {
+            this.ContactRep = contactRep;
+        }
+
         // GET api/Contacts - GetAll()
         public IEnumerable<Contact> GetContacts()
         {

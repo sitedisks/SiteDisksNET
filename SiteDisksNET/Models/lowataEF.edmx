@@ -7,6 +7,7 @@
     <Schema Namespace="lowataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="lowataModelStoreContainer">
           <EntitySet Name="Contact" EntityType="lowataModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PageInfo" EntityType="lowataModel.Store.PageInfo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Portfolio" EntityType="lowataModel.Store.Portfolio" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Contact">
@@ -18,6 +19,14 @@
           <Property Name="Subject" Type="nvarchar" MaxLength="1000" />
           <Property Name="Message" Type="text" />
           <Property Name="Email" Type="nvarchar" MaxLength="220" />
+        </EntityType>
+        <EntityType Name="PageInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PageTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Message" Type="text" />
         </EntityType>
         <EntityType Name="Portfolio">
           <Key>
@@ -39,6 +48,7 @@
         <EntityContainer Name="lowataEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Contacts" EntityType="lowataModel.Contact" />
           <EntitySet Name="Portfolios" EntityType="lowataModel.Portfolio" />
+          <EntitySet Name="PageInfoes" EntityType="lowataModel.PageInfo" />
         </EntityContainer>
         <EntityType Name="Contact">
           <Key>
@@ -62,6 +72,14 @@
           <Property Type="DateTime" Name="UpdatedDate" Precision="3" />
           <Property Type="String" Name="Title" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Title2" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PageInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PageTitle" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Message" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -90,6 +108,15 @@
                 <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
                 <ScalarProperty Name="URL" ColumnName="URL" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PageInfoes">
+            <EntityTypeMapping TypeName="lowataModel.PageInfo">
+              <MappingFragment StoreEntitySet="PageInfo">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

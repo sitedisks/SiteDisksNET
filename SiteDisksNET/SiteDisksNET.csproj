@@ -220,6 +220,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lowataEF.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PageInfo.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Portfolio.cs">
       <DependentUpon>lowataEF.tt</DependentUpon>
     </Compile>
@@ -402,6 +405,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\mailchimp.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\sitedisks.js" />
     <Content Include="sitemap.xml" />

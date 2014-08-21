@@ -27,5 +27,6 @@ namespace SiteDisksNET.Models
     
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<PageInfo> PageInfoes { get; set; }
     }
 }

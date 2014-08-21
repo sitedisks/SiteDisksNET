@@ -12,9 +12,7 @@ namespace SiteDisksNET.Models
     public class Repository<T> : IRepository<T> where T:class
     {
         private DbContext _context { get; set; }
-          
-        // DbContext is EF
-        // DataContext is Linq2SQL
+        // DbContext is EF, DataContext is Linq2SQL
 
         public Repository(DbContext dataContext)
         {
@@ -78,7 +76,7 @@ namespace SiteDisksNET.Models
             this._context.SaveChanges();
         }
 
-        //IDisposable impleyment
+        //IDisposable 
         public void Dispose()
         {
             this.Dispose(true);
