@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteDisksNET", "SiteDisksNET\SiteDisksNET.csproj", "{3DC087C6-56B9-4189-9767-FF9616E58E7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteDisksNET.Tests", "SiteDisksNET.Tests\SiteDisksNET.Tests.csproj", "{6F697653-7213-47E6-A721-9266F78C7D77}"
-EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -19,12 +13,12 @@ Global
 		{3DC087C6-56B9-4189-9767-FF9616E58E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DC087C6-56B9-4189-9767-FF9616E58E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DC087C6-56B9-4189-9767-FF9616E58E7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F697653-7213-47E6-A721-9266F78C7D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F697653-7213-47E6-A721-9266F78C7D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F697653-7213-47E6-A721-9266F78C7D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F697653-7213-47E6-A721-9266F78C7D77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
