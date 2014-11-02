@@ -8,7 +8,21 @@
         <EntityTypeShape EntityType="lowataModel.Contact" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="lowataModel.Portfolio" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="lowataModel.PageInfo" Width="1.5" PointX="4.625" PointY="0.75" />
-      </Diagram>
+        <EntityTypeShape EntityType="lowataModel.Category" Width="1.5" PointX="0.5" PointY="4.5" />
+        <EntityTypeShape EntityType="lowataModel.Comment" Width="1.5" PointX="9.375" PointY="4.125" />
+        <EntityTypeShape EntityType="lowataModel.CommentRole" Width="1.5" PointX="9.5" PointY="7.875" />
+        <EntityTypeShape EntityType="lowataModel.Issue" Width="1.5" PointX="5" PointY="4.25" />
+        <EntityTypeShape EntityType="lowataModel.IssueRoleCheck" Width="1.5" PointX="7.125" PointY="7.375" />
+        <EntityTypeShape EntityType="lowataModel.Role" Width="1.5" PointX="5" PointY="9" />
+        <EntityTypeShape EntityType="lowataModel.Task" Width="1.5" PointX="2.75" PointY="4.25" />
+        <AssociationConnector Association="lowataModel.FK_Task_Category" />
+        <AssociationConnector Association="lowataModel.FK_Comment_Issue" />
+        <AssociationConnector Association="lowataModel.FK_CommentRole_Comment" />
+        <AssociationConnector Association="lowataModel.FK_CommentRole_Role" />
+        <AssociationConnector Association="lowataModel.FK_Issue_Task" />
+        <AssociationConnector Association="lowataModel.FK_IssueRoleCheck_Issue" />
+        <AssociationConnector Association="lowataModel.FK_IssueRoleCheck_Role" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

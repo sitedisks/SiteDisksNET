@@ -196,15 +196,31 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommentRole.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Contact.cs">
       <DependentUpon>lowataEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IRepository.cs" />
+    <Compile Include="Models\Issue.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueRoleCheck.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\lowataEF.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -227,6 +243,12 @@
       <DependentUpon>lowataEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Repository.cs" />
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Task.cs">
+      <DependentUpon>lowataEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

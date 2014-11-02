@@ -28,5 +28,12 @@ namespace SiteDisksNET.Models
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<PageInfo> PageInfoes { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<CommentRole> CommentRoles { get; set; }
+        public DbSet<Issue> Issues { get; set; }
+        public DbSet<IssueRoleCheck> IssueRoleChecks { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Task> Tasks { get; set; }
     }
 }
