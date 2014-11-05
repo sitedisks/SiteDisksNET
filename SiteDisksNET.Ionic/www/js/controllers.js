@@ -1,6 +1,14 @@
-angular.module('starter.controllers', [])
+//(function () {
+//    'user strict';
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+//    app.controller('sitetask.controllers', ctrl);
+
+//    ctrl.$inject();
+
+//    function ctrl() { }
+//});
+
+loginModule.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -33,16 +41,3 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
