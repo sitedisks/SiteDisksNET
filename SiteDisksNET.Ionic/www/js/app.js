@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires' injected elements!
 // 'sitetask.controllers' is found in controllers.js
  
-var app = angular.module('sitetask', ['ionic', 'loginModule','playlistModule']);
+var app = angular.module('sitetask', ['ionic', 'login','playlist']);
 
 app.run(run);
 

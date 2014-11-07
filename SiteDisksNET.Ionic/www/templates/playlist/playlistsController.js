@@ -10,6 +10,4 @@
     ];
 })
 
-playlistModule.controller('PlaylistCtrl', function ($scope, $stateParams) {
-    
-});
+

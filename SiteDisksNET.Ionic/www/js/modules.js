@@ -1,3 +1,3 @@
-﻿var loginModule = angular.module('loginModule', []);
-var playlistModule = angular.module('playlistModule', []);
+﻿var loginModule = angular.module('login', []);
+var playlistModule = angular.module('playlist', []);
 
