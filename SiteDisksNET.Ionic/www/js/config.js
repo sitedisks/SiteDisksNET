@@ -8,14 +8,7 @@
 
 
         $stateProvider
-
-          .state('app', {
-              url: "/app",
-              abstract: true,
-              templateUrl: "templates/menu.html",
-              controller: 'AppCtrl'
-          })
-
+       
           .state('app.search', {
               url: "/search",
               views: {
