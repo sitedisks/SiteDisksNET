@@ -253,6 +253,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apiclient.html" />
+    <Content Include="app\css\bootstrap-theme.css" />
+    <Content Include="app\css\bootstrap-theme.min.css" />
+    <Content Include="app\css\bootstrap.css" />
+    <Content Include="app\css\bootstrap.min.css" />
+    <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\index.html" />
+    <Content Include="app\js\angular.min.js" />
+    <Content Include="app\js\bootstrap.js" />
+    <Content Include="app\js\bootstrap.min.js" />
+    <Content Include="app\js\npm.js" />
+    <Content Include="app\js\ui-bootstrap-tpls-0.11.2.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -339,6 +350,12 @@
       <LastGenOutput>lowataEF.cs</LastGenOutput>
     </Content>
     <Content Include="App_Code\SiteHelper.cshtml" />
+    <Content Include="app\css\bootstrap-theme.css.map" />
+    <Content Include="app\css\bootstrap.css.map" />
+    <Content Include="app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\js\angular.min.js.map" />
     <None Include="Properties\PublishProfiles\SiteDisksNET.pubxml" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Images\banner\sitedisks-amaze-1920.jpg" />
@@ -482,6 +499,7 @@
     <Content Include="Views\Home\_ContactForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\templates\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

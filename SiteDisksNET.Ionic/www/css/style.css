@@ -1,1 +1,5 @@
 /* Empty. Add your own CSS if you like */
+.metro .tile {
+    width: 145px;
+    margin: 0 5px 10px 5px !important;
+}
