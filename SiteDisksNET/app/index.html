@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-8">
                 <div class="label label-info">Issues</div>
-                <button class="btn btn-primary pull-right" ng-click="openIssueModel()">Add Issue</button>
+                <button class="btn btn-primary pull-right" ng-click="openIssueModel(null)">Add Issue</button>
                 <table class="table">
                     <thead>
                         <tr>
@@ -54,7 +54,7 @@
                             <td>{{issue.IssueTitle}}</td>
                             <td>{{issue.Description}}</td>
                             <td>
-                                <button class="btn btn-warning btn-sm glyphicon glyphicon-edit"></button>
+                                <button class="btn btn-warning btn-sm glyphicon glyphicon-edit" ng-click="openIssueModel(issue)"></button>
                                 <button class="btn btn-danger btn-sm glyphicon glyphicon-remove"></button>
 
                             </td>

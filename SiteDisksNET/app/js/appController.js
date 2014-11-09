@@ -10,13 +10,14 @@ sitetaskapp.controller('sitetaskCtrl', function ($scope,  $modal,  $http) {
 
     }
 
-    $scope.openIssueModel = function (size) {
+    $scope.openIssueModel = function (issue) {
         var issueModel = $modal.open({
             templateUrl: 'templates/issueModel.html',
             controller: 'IssueModelCtrl',
-            size: size,
             resolve: {
-               
+                issue: function () {
+                    return issue;
+                }
             }
         });
 

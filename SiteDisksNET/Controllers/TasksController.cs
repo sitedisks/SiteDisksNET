@@ -41,6 +41,7 @@ namespace SiteDisksNET.Controllers
                     Id = a.Id,
                     IssueTitle = a.IssueTitle,
                     Description = a.Description,
+                    TaskId = a.TaskId,
                     IsActive = a.IsActive?? true
                 }).ToList(),
                 IsActive = x.IsActive ?? true,
