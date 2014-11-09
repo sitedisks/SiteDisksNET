@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html data-ng-app="sitetask">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <script src="js/ui-bootstrap-tpls-0.11.2.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" data-ng-controller="sitetaskCtrl">
 
         <div class="row">
 
@@ -18,14 +18,53 @@
                 <h1>SiteTasks</h1>
             </div>
 
+            <div class="col-md-4">
+                <!--{{tasks}}-->
+                <!--<div class="label label-primary">Tasks List</div>-->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Task List</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in tasks">
+                            <td ng-class="{success: item.IsDone, danger: !item.IsDone}"
+                                ng-click="IssueTrack(item)">
+                                {{item.TaskTitle}}
+                            </td>
+                        </tr>
 
-
-            <div class="label label-danger">
-                Undo 
+                    </tbody>
+                </table>
             </div>
+            <div class="col-md-8">
+                <div class="label label-info">Issues</div>
+                <button class="btn btn-primary pull-right" ng-click="openIssueModel()">Add Issue</button>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Issue</th>
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="issue in issues">
+                            <td>{{issue.IssueTitle}}</td>
+                            <td>{{issue.Description}}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm glyphicon glyphicon-edit"></button>
+                                <button class="btn btn-danger btn-sm glyphicon glyphicon-remove"></button>
 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    
+    <script src="js/appController.js"></script>
+    <script src="templates/issueModel.js"></script>
 </body>
 </html>

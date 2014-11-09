@@ -1,4 +1,5 @@
 ﻿using SiteDisksNET.Models;
+using SiteDisksNET.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -10,28 +11,47 @@ using System.Web.Http.Cors;
 
 namespace SiteDisksNET.Controllers
 {
-    [EnableCors(origins:"http://www.sitedisks.com.au", headers: "*", methods:"*")]
+    [EnableCors(origins: "http://www.sitedisks.com.au", headers: "*", methods: "*")]
     public class TasksController : ApiController
     {
         private IRepository<Task> TaskRep;
-        
+
         public TasksController()
         {
             var dbcontext = new lowataEntities();
             TaskRep = new Repository<Task>(dbcontext);
         }
 
-        public TasksController(IRepository<Task> taskRep) {
+        public TasksController(IRepository<Task> taskRep)
+        {
             this.TaskRep = taskRep;
         }
 
         // GET: api/Tasks
-        public IEnumerable<Task> Get()
+        public IEnumerable<TaskModel> Get()
         {
-            var allTasks = TaskRep.GetAll().Where(x=>x.IsActive??true);
+            var allTasks = TaskRep.GetAll().Where(x => x.IsActive ?? true).Select(x => new TaskModel
+            {
+                Id = x.Id,
+                TaskTitle = x.TaskTitle,
+                CategoryId = x.CategoryId,
+                Details = x.Details,
+                Issues = x.Issues.Select(a => new IssueModel
+                {
+                    Id = a.Id,
+                    IssueTitle = a.IssueTitle,
+                    Description = a.Description,
+                    IsActive = a.IsActive?? true
+                }).ToList(),
+                IsActive = x.IsActive ?? true,
+                IsDone = x.IsDone ?? false
+            });
+
+
+
             return allTasks;
         }
-        
+
         // GET: api/Tasks/5
         public Task Get(int id)
         {
