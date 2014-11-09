@@ -13,6 +13,16 @@ namespace SiteDisksNET.Controllers
     {
         private IRepository<Issue> IssueRep;
 
+        public IssuesController() {
+            var dbcontext = new lowataEntities();
+            IssueRep = new Repository<Issue>(dbcontext);
+        }
+
+        public IssuesController(IRepository<Issue> issueRep)
+        {
+            this.IssueRep = issueRep;
+        }
+
         public HttpResponseMessage Post([FromBody]IssueModel issue)
         {
             if (ModelState.IsValid)

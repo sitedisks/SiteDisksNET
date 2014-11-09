@@ -1,8 +1,16 @@
-﻿sitetaskapp.controller('IssueModelCtrl', function ($scope, $modalInstance, $http, issue) {
+﻿sitetaskapp.controller('IssueModelCtrl', function ($scope, $modalInstance, $http, issue, taskId) {
  
     $scope.issue = issue;
+    $scope.taskId = taskId;
+
+
+
     $scope.save = function () {
-        $http.post('/api/tasks', $scope.issue).success(function (data, sataus) {
+
+        if ($scope.issue.TaskId == null)
+            $scope.issue.TaskId = $scope.taskId;
+        
+        $http.post('/api/issues', $scope.issue).success(function (data, sataus) {
 
 
             $scope.issue = data;

@@ -12,6 +12,7 @@
 
         <textarea class="form-control" rows="5" placeholder="Issue Description" ng-model="issue.Description"></textarea>
     </div>
+    <input type="hidden" ng-model="issue.TaskId" />
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" ng-click="save()">save</button>

@@ -7,16 +7,20 @@ sitetaskapp.controller('sitetaskCtrl', function ($scope,  $modal,  $http) {
   
     $scope.IssueTrack = function (task) {
         $scope.issues = task.Issues;
-
+        $scope.taskId = task.Id;
     }
 
     $scope.openIssueModel = function (issue) {
+     
         var issueModel = $modal.open({
             templateUrl: 'templates/issueModel.html',
             controller: 'IssueModelCtrl',
             resolve: {
                 issue: function () {
                     return issue;
+                },
+                taskId: function () {
+                    return $scope.taskId;
                 }
             }
         });
