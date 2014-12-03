@@ -10,10 +10,11 @@
         if ($scope.issue.TaskId == null)
             $scope.issue.TaskId = $scope.taskId;
         
-        $http.post('/api/issues', $scope.issue).success(function (data, sataus) {
-
+        $http.post('/api/issues', $scope.issue).success(function (data, status) {
 
             $scope.issue = data;
+            toastr.success('Save Success!');
+            $modalInstance.close();
         });
     }
 
