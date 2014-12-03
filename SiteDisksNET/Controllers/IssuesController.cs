@@ -23,6 +23,20 @@ namespace SiteDisksNET.Controllers
             this.IssueRep = issueRep;
         }
 
+        public IEnumerable<IssueModel> GetById(int id)
+        {
+            var allIssues = IssueRep.GetAll().Where(x => (x.IsActive ?? true) && x.TaskId == id).Select(x=>new IssueModel{
+                Id = x.Id,
+                IssueTitle = x.IssueTitle,
+                Description = x.Description,
+                TaskId = x.TaskId,
+                IsActive = x.IsActive ?? true
+
+            });
+
+            return allIssues;
+        }
+
         public HttpResponseMessage Post([FromBody]IssueModel issue)
         {
             if (ModelState.IsValid)

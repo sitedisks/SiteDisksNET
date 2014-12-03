@@ -3,8 +3,6 @@
     $scope.issue = issue;
     $scope.taskId = taskId;
 
-
-
     $scope.save = function () {
 
         if ($scope.issue.TaskId == null)
@@ -12,7 +10,8 @@
         
         $http.post('/api/issues', $scope.issue).success(function (data, status) {
 
-            $scope.issue = data;
+            //$scope.issue = data;
+           
             toastr.success('Save Success!');
             $modalInstance.close();
         });

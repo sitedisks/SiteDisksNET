@@ -36,14 +36,6 @@ namespace SiteDisksNET.Controllers
                 TaskTitle = x.TaskTitle,
                 CategoryId = x.CategoryId,
                 Details = x.Details,
-                Issues = x.Issues.Select(a => new IssueModel
-                {
-                    Id = a.Id,
-                    IssueTitle = a.IssueTitle,
-                    Description = a.Description,
-                    TaskId = a.TaskId,
-                    IsActive = a.IsActive?? true
-                }).ToList(),
                 IsActive = x.IsActive ?? true,
                 IsDone = x.IsDone ?? false
             });

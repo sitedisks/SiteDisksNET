@@ -260,6 +260,7 @@
     <Content Include="app\css\bootstrap-theme.min.css" />
     <Content Include="app\css\bootstrap.css" />
     <Content Include="app\css\bootstrap.min.css" />
+    <Content Include="app\css\toastr.css" />
     <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="app\index.html" />
     <Content Include="app\js\angular.min.js" />
@@ -267,6 +268,7 @@
     <Content Include="app\js\bootstrap.js" />
     <Content Include="app\js\bootstrap.min.js" />
     <Content Include="app\js\npm.js" />
+    <Content Include="app\js\toastr.js" />
     <Content Include="app\js\ui-bootstrap-tpls-0.11.2.min.js" />
     <Content Include="app\templates\issueModel.html" />
     <Content Include="app\templates\issueModel.js" />
@@ -506,6 +508,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

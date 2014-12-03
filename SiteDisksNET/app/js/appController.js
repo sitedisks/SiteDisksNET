@@ -6,8 +6,18 @@ sitetaskapp.controller('sitetaskCtrl', function ($scope,  $modal,  $http) {
     $scope.tasks = [];
   
     $scope.IssueTrack = function (task) {
-        $scope.issues = task.Issues;
+    
         $scope.taskId = task.Id;
+        $http.get('/api/issues?id=' + $scope.taskId).success(function (data, status) {
+            $scope.issues = data;
+        });
+    }
+
+    $scope.IsDone = function (done) {
+        if (done)
+            return "Done";
+        else
+            return "Process";
     }
 
     $scope.openIssueModel = function (issue) {
@@ -26,11 +36,15 @@ sitetaskapp.controller('sitetaskCtrl', function ($scope,  $modal,  $http) {
         });
 
         issueModel.result.then(function () {
-            //Save the Issue 
+            // refresh the table
+            $http.get('/api/issues?id=' + $scope.taskId).success(function (data, status) {
+                $scope.issues = data;
+            });
+
         });
     }
 
-    $http.get('/api/tasks').success(function (data, sataus) {
+    $http.get('/api/tasks').success(function (data, status) {
         $scope.tasks = data;
     });
 });
