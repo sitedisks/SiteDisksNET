@@ -368,7 +368,6 @@
     <Content Include="app\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="app\js\angular.min.js.map" />
     <None Include="Properties\PublishProfiles\Lowata.SiteDisks.NET.pubxml" />
-    <None Include="Properties\PublishProfiles\SiteDisksNET.pubxml" />
     <None Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Images\banner\sitedisks-amaze-1920.jpg" />
     <Content Include="Images\banner\sitedisks-architecture-1920.jpg" />
